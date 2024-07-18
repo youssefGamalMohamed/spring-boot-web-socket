@@ -58,5 +58,5 @@ This Repo Contains Applied Example for Learning Web-Sockets using Spring Boot
    ```
 
 5. **Access the application**
-   Open a web browser and go to `http://localhost:8080`
+   Open a web browser and go to `http://localhost:9999`
 
