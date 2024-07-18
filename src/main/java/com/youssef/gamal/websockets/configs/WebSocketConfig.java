@@ -1,5 +1,6 @@
 package com.youssef.gamal.websockets.configs;
 
+import com.youssef.gamal.websockets.handlers.AdditionHandler;
 import com.youssef.gamal.websockets.handlers.TutorialHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +16,7 @@ public class WebSocketConfig implements WebSocketConfigurer {
     @Override
     public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
         registry.addHandler(tutorialHandler(), "/tutorial")
+                .addHandler(additionHandler(), "/addition")
                 .setAllowedOrigins("*");
 
     }
@@ -22,5 +24,10 @@ public class WebSocketConfig implements WebSocketConfigurer {
     @Bean
     WebSocketHandler tutorialHandler() {
         return new TutorialHandler();
+    }
+
+    @Bean
+    WebSocketHandler additionHandler() {
+        return new AdditionHandler();
     }
 }
